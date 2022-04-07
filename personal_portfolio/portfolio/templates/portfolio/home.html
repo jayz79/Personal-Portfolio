@@ -5,12 +5,17 @@
 
     {% load static %}
 
+    <div class="row justify-content-center my-3">
+        <div class="col-5">
+          <img src="{% static 'portfolio/grad_photo.jpg' %}" class="img-fluid">
+        </div>
+      </div>
+
     <a href="{% url 'blog:all_blogs' %}">Construction blogs</a>
     <br>
 
     <a href="{% static 'portfolio/Jafeth Zuniga Resume Spring 2022.pdf' %}">Resume</a>
 
-    <img src="{% static 'portfolio/grad_photo.jpg' %}">
 
     {% for project in projects %}
 
