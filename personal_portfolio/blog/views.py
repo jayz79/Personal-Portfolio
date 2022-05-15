@@ -17,3 +17,13 @@ def detail(request, blog_id):
 def show_video(request):
     latest_video = Video.objects.last()
     video_file = latest_video.video_file
+    form = VideoForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        form.save()
+    
+    video_context = {'video_file': video_file,
+                     'form': form,
+                    }
+
+    return render(request, 'blog/videos.html'.context)
